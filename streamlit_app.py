@@ -2,9 +2,8 @@ import streamlit as st
 import joblib
 import os
 
-# Cargar el modelo desde la carpeta 'models/'
-model_path = os.path.join(os.path.dirname(__file__), 'models', 'svm_model.pkl')
-model = joblib.load(model_path)
+# Cargar el modelo
+model = joblib.load('svm_model.pkl')
 
 # Título de la aplicación
 st.title("Titanic Survival Predictor")
