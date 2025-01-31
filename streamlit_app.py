@@ -15,7 +15,18 @@ sex = st.selectbox("Sexo", ["Male", "Female"])
 age = st.number_input("Edad", min_value=0, max_value=100)
 sibsp = st.number_input("Número de hermanos/cónyuges (SibSp)", min_value=0)
 parch = st.number_input("Número de padres/hijos (Parch)", min_value=0)
-fare = st.number_input("Tarifa (Fare)", min_value=0.0)
+# Input para la tarifa como texto
+fare_input = st.text_input("Tarifa (Fare)", value="0.0")
+
+# Validar y convertir la tarifa
+try:
+    fare = float(fare_input.replace(",", "."))  # Reemplazar coma por punto y convertir a float
+    print(fare)
+except ValueError:
+    st.error("Por favor, ingresa un número válido para la tarifa.")
+    fare = 0.0
+
+
 embarked = st.selectbox("Puerto de embarque (Embarked)", ["S", "C", "Q"])
 
 # Convertir entradas a formato numérico
