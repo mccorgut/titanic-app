@@ -33,6 +33,8 @@ embarked = 0 if embarked == "S" else 1 if embarked == "C" else 2
 
 # Predice si el pasajero sobreviviría
 if st.button("Predecir"):
+    # Convierte age a float 
+    age = float(age)
     features = [pclass, sex, age, sibsp, parch, fare, embarked]
     
     # Comprueba los valores de entrada en la interfaz de Streamlit
