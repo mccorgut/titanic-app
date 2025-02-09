@@ -38,7 +38,8 @@ if st.button("Predecir"):
     features = np.array([[pclass, sex, age, sibsp, parch, fare, embarked]])
     
     # Comprueba los valores de entrada en la interfaz de Streamlit
-    st.write("Valores de entrada para el modelo:", features.tolist())
+    st.write("Valores de entrada para el modelo:")
+    st.write(f"Pclass: {pclass}, Sex: {sex}, Age: {age}, SibSp: {sibsp}, Parch: {parch}, Fare: {fare}, Embarked: {embarked}")
     
     # Realiza la prediccion
     prediction = model.predict(features)
